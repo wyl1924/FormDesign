@@ -16,7 +16,7 @@ font-size:0.8em;
 letter-spacing:0.05em;
 font-family:"Verdana","微软雅黑","宋体","Lucida Grande","Lucida Sans Unicode", Tahoma, sans-serif;
 background-color:#fafafa;
-background: url(/Content/FormDesign/images/builderBg.png) repeat;
+background: url(../images/builderBg.png) repeat;
 }
 ul,ol{list-style-type:none;list-style-image:none;}
 a{text-decoration:none;color:#666;}
@@ -449,7 +449,7 @@ background-color:#333;
     font-size: 13px;
     padding-bottom: 5px;
     padding: 6px 10px;
-    background: url("/Content/FormDesign/images/cancel.png") no-repeat scroll 95% 6px #f6f6f6;
+    background: url("../images/cancel.png") no-repeat scroll 95% 6px #f6f6f6;
 }
 .helpTip em{
     display: block;
@@ -501,7 +501,7 @@ background-color:#333;
 }
 .status .y{
 	position: relative;
-	background: url("/Content/FormDesign/images/loader.gif") no-repeat scroll 8px center #444444;
+	background: url("../images/loader.gif") no-repeat scroll 8px center #444444;
 }
 .statusText{
 	color: #fff;
@@ -547,8 +547,8 @@ height: 50px;
 }
 #nav h1.logo a{
 	font-size:100%;
-    background: url("/Content/FormDesign/images/logo.png") no-repeat scroll left top transparent;
-    background: url("/Content/FormDesign/images/logo.png") no-repeat scroll left top transparent;
+    background: url("../images/logo.png") no-repeat scroll left top transparent;
+    background: url("../images/logo.png") no-repeat scroll left top transparent;
     display: block;
     height: 100%;
     overflow: hidden;
@@ -725,7 +725,7 @@ h2.f {
 	padding: 0px 30px 0px 0px;
 	border:1px solid #dedede;
 	margin-bottom: 20px;
-	background: url("/Content/FormDesign/images/sidebarbg.png") repeat-y scroll -120px 0 #fff;
+	background: url("../images/sidebarbg.png") repeat-y scroll -120px 0 #fff;
 }
 #stageLeft{
 	width:200px;
@@ -756,11 +756,11 @@ legend{
 .inline{display:inline-block;}
 /*---------------------iconfont-----------------------*/
 @font-face {font-family: "iconfont";
-  src: url('/Content/FormDesign/fonts/iconfont.eot?t=1460925139'); 
-  src: url('/Content/FormDesign/fonts/iconfont.eot?t=1460925139#iefix') format('embedded-opentype'),
-  url('/Content/FormDesign/fonts/iconfont.woff?t=1460925139') format('woff'),
-  url('/Content/FormDesign/fonts/iconfont.ttf?t=1460925139') format('truetype'), 
-  url('/Content/FormDesign/fonts/iconfont.svg?t=1460925139#iconfont') format('svg');
+  src: url('../fonts/iconfont.eot?t=1460925139'); 
+  src: url('../fonts/iconfont.eot?t=1460925139#iefix') format('embedded-opentype'),
+  url('../fonts/iconfont.woff?t=1460925139') format('woff'),
+  url('../fonts/iconfont.ttf?t=1460925139') format('truetype'), 
+  url('../fonts/iconfont.svg?t=1460925139#iconfont') format('svg');
 }
 
 .iconfont {

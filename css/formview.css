@@ -238,11 +238,11 @@ ul {
     padding: 6px 20px;
 }
 input.selectfiles:hover {
-    background-image: url("~/Content/FormDesign/images/fileupload01.png");
+    background-image: url("../../rs/css/images/fileupload01.png");
 }
 .selectfiles {
     background-color: transparent !important;
-    background-image: url("~/Content/FormDesign/images/fileupload.png");
+    background-image: url("../../rs/css/images/fileupload.png");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 100% 100%;

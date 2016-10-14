@@ -1,17 +1,9 @@
 
 .wallpaper {
-     background: rgba(0, 0, 0, 0) url("/Content/FormDesign/images/builderBg.png") repeat scroll 0 0;
-    color: #333;
+    background: #e9e9e9 none repeat scroll 0 0;
 }
 .container {
     background: #fff none repeat scroll 0 0;
-}
-body {
-    background: rgba(0, 0, 0, 0) url("/Content/FormDesign/images/builderBg.png") repeat scroll 0 0;
-    color: #333;
-    font-family: "Verdana","Î¢ÈíÑÅºÚ","ËÎÌå","Lucida Grande","Lucida Sans Unicode",Tahoma,sans-serif;
-    font-size: 0.8em;
-    letter-spacing: 0.05em;
 }
 .logo {
     background: #494949 none repeat scroll 0 0;
