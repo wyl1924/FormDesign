@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "自定义表单字段表详情";
+    Layout = "~/Views/Shared/_LayoutEditAndAdd.cshtml";
+}
+@model CustomFrom.CustomFromField.Model
+@using Dictionary;
+@using CommonHelper;
+@{
+    DictBLL dbll = new DictBLL();
+}
+<script type="text/javascript">
+    $(function () {
+        //删除按钮
+        if ($("#@ViewBag.btnDelID") != null) {
+            $("#@ViewBag.btnDelID").click(function () {
+                if (confirm("确认删除？")) {
+                    $.ajax({
+                        url: "/CustomFrom/CustomFromField/DelCustomFromField",
+                        data: {lsid: "@ViewBag.KeyVal" },
+                        type: "POST",
+                        success: function (data) {
+                            if (data == "dataError")
+                                window.location.href = "/Error/Error";
+                            else
+                                eval(data);
+                        }
+                    });
+                }
+            });
+        };
+    })
+</script>
+<div style="width: 96%; margin-left: 2%; text-align: center; margin-top: 10px;">
+                主索引:@Model.CFF_ID
+                主表的guid:@Model.CFF_CFTGuid
+                备注:@Model.CFF_Comment
+                字段名称:@Model.CFF_Name
+                字段长度:@Model.CFF_Size
+                字段类型:@Model.CFF_Type
+                是否为空:@Model.CFF_IsNull
+                是否为主键:@Model.CFF_IsKey
+                是否为外键:@Model.CFF_IsForeignkey
+                备注:@Model.CFF_Remark
+                备用1:@Model.CFF_Str1
+                备用2:@Model.CFF_Str2
+                备用3:@Model.CFF_Str3
+                备用4:@Model.CFF_Str4
+                备用5:@Model.CFF_Str5
+</div>

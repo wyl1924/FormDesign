@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "自定义表单字段表增加";
+    Layout = "~/Views/Shared/_LayoutEditAndAdd.cshtml";
+    ViewBag.formID = "CustomFromFieldAdd";
+}
+@using Dictionary;
+@{
+    DictBLL dbll = new DictBLL();
+}
+<style type="text/css">
+    .errorLabel {
+        color: red;
+        font-weight: lighter;
+        font-size: 12px;
+    }
+</style>
+<div class="container" style="margin-top: 20px; width: 98%">
+    <div class="row">
+        <div class="col-md-12">
+            @using (Ajax.BeginForm("CustomFromFieldAdd", "CustomFromField",
+                    ajaxOptions: new AjaxOptions
+                    {
+                        InsertionMode = InsertionMode.Replace,
+                        HttpMethod = "POST",
+                        OnBegin = "RemoveData"
+                    },
+                    htmlAttributes: new
+                    {
+                        id = "CustomFromFieldAdd",
+                        @class = "form-horizontal"
+                    }
+                    ))
+            {
+                <span style="color: red">* </span>
+                主表的guid:<input type="text" id="CFF_CFTGuid" name="CFF_CFTGuid" class="form-control " />
+                <label class="label error errorLabel" for="CFF_CFTGuid" generated="true"></label>
+                备注:<input type="text" id="CFF_Comment" name="CFF_Comment" class="form-control " />
+                <label class="label error errorLabel" for="CFF_Comment" generated="true"></label>
+                字段名称:<input type="text" id="CFF_Name" name="CFF_Name" class="form-control " />
+                <label class="label error errorLabel" for="CFF_Name" generated="true"></label>
+                字段长度:<input type="text" id="CFF_Size" name="CFF_Size" class="form-control " />
+                <label class="label error errorLabel" for="CFF_Size" generated="true"></label>
+                字段类型:<input type="text" id="CFF_Type" name="CFF_Type" class="form-control " />
+                <label class="label error errorLabel" for="CFF_Type" generated="true"></label>
+                是否为空:<input type="text" id="CFF_IsNull" name="CFF_IsNull" class="form-control " />
+                <label class="label error errorLabel" for="CFF_IsNull" generated="true"></label>
+                是否为主键:<input type="text" id="CFF_IsKey" name="CFF_IsKey" class="form-control " />
+                <label class="label error errorLabel" for="CFF_IsKey" generated="true"></label>
+                是否为外键:<input type="text" id="CFF_IsForeignkey" name="CFF_IsForeignkey" class="form-control " />
+                <label class="label error errorLabel" for="CFF_IsForeignkey" generated="true"></label>
+                备注:<input type="text" id="CFF_Remark" name="CFF_Remark" class="form-control " />
+                <label class="label error errorLabel" for="CFF_Remark" generated="true"></label>
+                备用1:<input type="text" id="CFF_Str1" name="CFF_Str1" class="form-control " />
+                <label class="label error errorLabel" for="CFF_Str1" generated="true"></label>
+                备用2:<input type="text" id="CFF_Str2" name="CFF_Str2" class="form-control " />
+                <label class="label error errorLabel" for="CFF_Str2" generated="true"></label>
+                备用3:<input type="text" id="CFF_Str3" name="CFF_Str3" class="form-control " />
+                <label class="label error errorLabel" for="CFF_Str3" generated="true"></label>
+                备用4:<input type="text" id="CFF_Str4" name="CFF_Str4" class="form-control " />
+                <label class="label error errorLabel" for="CFF_Str4" generated="true"></label>
+                备用5:<input type="text" id="CFF_Str5" name="CFF_Str5" class="form-control " />
+                <label class="label error errorLabel" for="CFF_Str5" generated="true"></label>
+                <div class="row">
+                    <div class="form-group">
+                        <button type="submit" style="margin-left: 50%; position: relative; left: -27px" class="btn btn-success">添加</button>
+                    </div>
+                </div>  
+            }
+        </div>
+    </div>
+</div>

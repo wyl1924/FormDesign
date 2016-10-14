@@ -1,0 +1,286 @@
+﻿@{
+    ViewBag.Title = "表单信息表修改";
+    Layout = "~/Views/Shared/_LayoutEditAndAdd.cshtml";
+    ViewBag.formID = "FormDesignEdit";
+}
+@model CustomFrom.FormDesign.Model
+@using Dictionary;
+@{
+    DictBLL dbll = new DictBLL();
+}
+<style type="text/css">
+    .errorLabel {
+        color: red; font-weight: lighter; font-size:12px;
+    }
+</style>
+<div class="container" style="margin-top: 20px; width: 98%">
+    <div class="row">
+        <div class="col-md-12">
+            @using (Ajax.BeginForm("FormDesignEdit", "FormDesign",
+                    ajaxOptions: new AjaxOptions
+                    {
+                        InsertionMode = InsertionMode.Replace,
+                        HttpMethod = "POST",
+                        OnBegin = "RemoveData"
+                    },
+                    htmlAttributes: new
+                    {
+                        id = "FormDesignEdit",
+                        @class = "form-horizontal"
+                    }
+                    ))
+            {
+                <input id="Aid" name="Aid" type="hidden" value="@ViewBag.AID" />
+                <input id="ACid" name="ACid" type="hidden" value="@ViewBag.ACID" />
+                <input id="LSid" name="ID" type="hidden" value="@ViewBag.ID" />
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="Form_Guid" class="col-sm-2 control-label"><span style="color: red">* </span>表单guid：</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="Form_Guid" name="Form_Guid" value="@Model.Form_Guid" class="form-control " />
+                                <label class="label error errorLabel" for="Form_Guid" generated="true"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="FRMNM" class="col-sm-2 control-label"><span style="color: red">* </span>表单名称：</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="FRMNM" name="FRMNM" value="@Model.FRMNM" class="form-control " />
+                                <label class="label error errorLabel" for="FRMNM" generated="true"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="DESC" class="col-sm-2 control-label"><span style="color: red">* </span>描述：</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="DESC" name="DESC" value="@Model.DESC" class="form-control " />
+                                <label class="label error errorLabel" for="DESC" generated="true"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="LBLAL" class="col-sm-2 control-label"><span style="color: red">* </span>对齐方式：</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="LBLAL" name="LBLAL" value="@Model.LBLAL" class="form-control " />
+                                <label class="label error errorLabel" for="LBLAL" generated="true"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="CFMTYP" class="col-sm-2 control-label"><span style="color: red">* </span>提示类型：</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="CFMTYP" name="CFMTYP" value="@Model.CFMTYP" class="form-control " />
+                                <label class="label error errorLabel" for="CFMTYP" generated="true"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="CFMMSG" class="col-sm-2 control-label"><span style="color: red">* </span>提示信息：</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="CFMMSG" name="CFMMSG" value="@Model.CFMMSG" class="form-control " />
+                                <label class="label error errorLabel" for="CFMMSG" generated="true"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="CFMURL" class="col-sm-2 control-label"><span style="color: red">* </span>URL地址：</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="CFMURL" name="CFMURL" value="@Model.CFMURL" class="form-control " />
+                                <label class="label error errorLabel" for="CFMURL" generated="true"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="SDMAIL" class="col-sm-2 control-label"><span style="color: red">* </span>可见性（隐藏）：</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="SDMAIL" name="SDMAIL" value="@Model.SDMAIL" class="form-control " />
+                                <label class="label error errorLabel" for="SDMAIL" generated="true"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="CAPTCHA" class="col-sm-2 control-label"><span style="color: red">* </span>验证码：</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="CAPTCHA" name="CAPTCHA" value="@Model.CAPTCHA" class="form-control " />
+                                <label class="label error errorLabel" for="CAPTCHA" generated="true"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="IPLMT" class="col-sm-2 control-label"><span style="color: red">* </span>ip地址：</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="IPLMT" name="IPLMT" value="@Model.IPLMT" class="form-control " />
+                                <label class="label error errorLabel" for="IPLMT" generated="true"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="INSTR" class="col-sm-2 control-label"><span style="color: red">* </span>默认值：</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="INSTR" name="INSTR" value="@Model.INSTR" class="form-control " />
+                                <label class="label error errorLabel" for="INSTR" generated="true"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="ISPUB" class="col-sm-2 control-label"><span style="color: red">* </span>说明：</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="ISPUB" name="ISPUB" value="@Model.ISPUB" class="form-control " />
+                                <label class="label error errorLabel" for="ISPUB" generated="true"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="GID" class="col-sm-2 control-label"><span style="color: red">* </span>选择项：</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="GID" name="GID" value="@Model.GID" class="form-control " />
+                                <label class="label error errorLabel" for="GID" generated="true"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="HEIGHT" class="col-sm-2 control-label"><span style="color: red">* </span>高度：</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="HEIGHT" name="HEIGHT" value="@Model.HEIGHT" class="form-control " />
+                                <label class="label error errorLabel" for="HEIGHT" generated="true"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="FormInfo" class="col-sm-2 control-label"><span style="color: red">* </span>表单信息：</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="FormInfo" name="FormInfo" value="@Model.FormInfo" class="form-control " />
+                                <label class="label error errorLabel" for="FormInfo" generated="true"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="FromControlInfo" class="col-sm-2 control-label"><span style="color: red">* </span>表单控件信息：</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="FromControlInfo" name="FromControlInfo" value="@Model.FromControlInfo" class="form-control " />
+                                <label class="label error errorLabel" for="FromControlInfo" generated="true"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="HEIGHT" class="col-sm-2 control-label"><span style="color: red">* </span>高度：</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="HEIGHT" name="HEIGHT" value="@Model.HEIGHT" class="form-control " />
+                                <label class="label error errorLabel" for="HEIGHT" generated="true"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="From_Str1" class="col-sm-2 control-label"><span style="color: red">* </span>备用1：</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="From_Str1" name="From_Str1" value="@Model.From_Str1" class="form-control " />
+                                <label class="label error errorLabel" for="From_Str1" generated="true"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="From_Str2" class="col-sm-2 control-label"><span style="color: red">* </span>备用2：</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="From_Str2" name="From_Str2" value="@Model.From_Str2" class="form-control " />
+                                <label class="label error errorLabel" for="From_Str2" generated="true"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="From_Str3" class="col-sm-2 control-label"><span style="color: red">* </span>备用3：</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="From_Str3" name="From_Str3" value="@Model.From_Str3" class="form-control " />
+                                <label class="label error errorLabel" for="From_Str3" generated="true"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="From_Str4" class="col-sm-2 control-label"><span style="color: red">* </span>备用4：</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="From_Str4" name="From_Str4" value="@Model.From_Str4" class="form-control " />
+                                <label class="label error errorLabel" for="From_Str4" generated="true"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="From_Str5" class="col-sm-2 control-label"><span style="color: red">* </span>备用5：</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="From_Str5" name="From_Str5" value="@Model.From_Str5" class="form-control " />
+                                <label class="label error errorLabel" for="From_Str5" generated="true"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <button type="submit" style="margin-left: 50%; position: relative; left: -27px" class="btn btn-success">修改</button>
+                    </div>
+                </div>  
+            }
+        </div>
+    </div>
+</div>

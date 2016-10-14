@@ -1,0 +1,75 @@
+
+.wallpaper {
+     background: rgba(0, 0, 0, 0) url("/Content/FormDesign/images/builderBg.png") repeat scroll 0 0;
+    color: #333;
+}
+.container {
+    background: #fff none repeat scroll 0 0;
+}
+body {
+    background: rgba(0, 0, 0, 0) url("/Content/FormDesign/images/builderBg.png") repeat scroll 0 0;
+    color: #333;
+    font-family: "Verdana","Î¢ÈíÑÅºÚ","ËÎÌå","Lucida Grande","Lucida Sans Unicode",Tahoma,sans-serif;
+    font-size: 0.8em;
+    letter-spacing: 0.05em;
+}
+.logo {
+    background: #494949 none repeat scroll 0 0;
+}
+.logo a {
+    background: transparent none no-repeat scroll left top;
+    height: 40px;
+}
+.info {
+    border-bottom: 1px dotted #ccc;
+}
+.info h2 {
+    color: #333;
+    font-size: 160%;
+    font-style: normal;
+    font-weight: bold;
+}
+.info div {
+    color: #555;
+    font-size: 95%;
+    font-style: normal;
+    font-weight: normal;
+}
+.input {
+    background-color: #fff;
+    color: #333;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: normal;
+    font-weight: normal;
+}
+.instruct {
+    background-color: #f5f5f5;
+    border-color: #e6e6e6;
+    border-style: solid;
+    border-width: 1px;
+    color: #444;
+    font-family: inherit;
+    font-size: 90%;
+    font-style: normal;
+    font-weight: normal;
+}
+.desc {
+    color: #333;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: bold;
+}
+.controlgroup > label {
+    border-bottom: 1px solid #eee;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+}
+.controlgroup > label.first {
+    border-top: 1px solid #eee;
+}
+.btn-submit {
+    background-color: #494949;
+    border: 1px solid transparent;
+    color: #fff;
+}

@@ -1,0 +1,109 @@
+﻿@{
+    ViewBag.Title = "表单信息表详情";
+    Layout = "~/Views/Shared/_LayoutEditAndAdd.cshtml";
+}
+@model CustomFrom.FormDesign.Model
+@using Dictionary;
+@using CommonHelper;
+@{
+    DictBLL dbll = new DictBLL();
+}
+<script type="text/javascript">
+    $(function () {
+        //删除按钮
+        if ($("#@ViewBag.btnDelID") != null) {
+            $("#@ViewBag.btnDelID").click(function () {
+                if (confirm("确认删除？")) {
+                    $.ajax({
+                        url: "/CustomFrom/FormDesign/DelFormDesign",
+                        data: {lsid: "@ViewBag.KeyVal" },
+                        type: "POST",
+                        success: function (data) {
+                            if (data == "dataError")
+                                window.location.href = "/Error/Error";
+                            else
+                                eval(data);
+                        }
+                    });
+                }
+            });
+        };
+    })
+</script>
+<div style="width: 96%; margin-left: 2%;">
+    <h3>表单信息表<span style="font-size: 14px;">（筛查单位：@Model.UUCode　　筛查时间：@Model.） 录入人：@ViewBag.UNickName）</span>
+        <a style="font-size: 14px; float: right; line-height: 2.5;" href="#oranges">回到顶部↑</a>
+        @Html.Raw(ViewBag.Edit)
+        @Html.Raw(ViewBag.Del)
+    </h3>
+</div>
+<div style="width: 96%; margin-left: 2%; text-align: center; margin-top: 10px;">
+    <table class="table table-bordered" style="width: 100%; text-align: center;">
+        <tr>
+            <td class="active" style="text-align: right">表单guid：</td>
+            <td style="text-align: left; background-color: white;"> @Model.Form_Guid</td>
+            <td class="active" style="text-align: right">表单名称：</td>
+            <td style="text-align: left; background-color: white;"> @Model.FRMNM</td>
+        </tr>
+        <tr>
+            <td class="active" style="text-align: right">描述：</td>
+            <td style="text-align: left; background-color: white;"> @Model.DESC</td>
+            <td class="active" style="text-align: right">对齐方式：</td>
+            <td style="text-align: left; background-color: white;"> @Model.LBLAL</td>
+        </tr>
+        <tr>
+            <td class="active" style="text-align: right">提示类型：</td>
+            <td style="text-align: left; background-color: white;"> @Model.CFMTYP</td>
+            <td class="active" style="text-align: right">提示信息：</td>
+            <td style="text-align: left; background-color: white;"> @Model.CFMMSG</td>
+        </tr>
+        <tr>
+            <td class="active" style="text-align: right">URL地址：</td>
+            <td style="text-align: left; background-color: white;"> @Model.CFMURL</td>
+            <td class="active" style="text-align: right">可见性（隐藏）：</td>
+            <td style="text-align: left; background-color: white;"> @Model.SDMAIL</td>
+        </tr>
+        <tr>
+            <td class="active" style="text-align: right">验证码：</td>
+            <td style="text-align: left; background-color: white;"> @Model.CAPTCHA</td>
+            <td class="active" style="text-align: right">ip地址：</td>
+            <td style="text-align: left; background-color: white;"> @Model.IPLMT</td>
+        </tr>
+        <tr>
+            <td class="active" style="text-align: right">默认值：</td>
+            <td style="text-align: left; background-color: white;"> @Model.INSTR</td>
+            <td class="active" style="text-align: right">说明：</td>
+            <td style="text-align: left; background-color: white;"> @Model.ISPUB</td>
+        </tr>
+        <tr>
+            <td class="active" style="text-align: right">选择项：</td>
+            <td style="text-align: left; background-color: white;"> @Model.GID</td>
+            <td class="active" style="text-align: right">高度：</td>
+            <td style="text-align: left; background-color: white;"> @Model.HEIGHT</td>
+        </tr>
+        <tr>
+            <td class="active" style="text-align: right">表单信息：</td>
+            <td style="text-align: left; background-color: white;"> @Model.FormInfo</td>
+            <td class="active" style="text-align: right">表单控件信息：</td>
+            <td style="text-align: left; background-color: white;"> @Model.FromControlInfo</td>
+        </tr>
+        <tr>
+            <td class="active" style="text-align: right">高度：</td>
+            <td style="text-align: left; background-color: white;"> @Model.HEIGHT</td>
+            <td class="active" style="text-align: right">备用1：</td>
+            <td style="text-align: left; background-color: white;"> @Model.From_Str1</td>
+        </tr>
+        <tr>
+            <td class="active" style="text-align: right">备用2：</td>
+            <td style="text-align: left; background-color: white;"> @Model.From_Str2</td>
+            <td class="active" style="text-align: right">备用3：</td>
+            <td style="text-align: left; background-color: white;"> @Model.From_Str3</td>
+        </tr>
+        <tr>
+            <td class="active" style="text-align: right">备用4：</td>
+            <td style="text-align: left; background-color: white;"> @Model.From_Str4</td>
+            <td class="active" style="text-align: right">备用5：</td>
+            <td style="text-align: left; background-color: white;"> @Model.From_Str5</td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Reports>
+  <Report id="0">
+    <id>0</id>
+    <name>测试表单1</name>
+    <SQLType>MSSQL</SQLType>
+    <SQLServer>s1.hzcrj.com,1999</SQLServer>
+    <SQLUser>sa</SQLUser>
+    <SQLPwd>hc3232327</SQLPwd>
+    <SQLDatabase>TRQC</SQLDatabase>
+    <ReportSQL>"select top 30 [存货编码] ,[存货名称],cast(cast([数量] as int) as varchar(50)) as 数量,[计量单位] as 单位 from [InvQC]"</ReportSQL>
+  </Report>
+
+  <Report id="1">
+    <id>1</id>
+    <name>测试表单2</name>
+    <SQLType>MSSQL</SQLType>
+    <SQLServer>s1.hzcrj.com,1999</SQLServer>
+    <SQLUser>sa</SQLUser>
+    <SQLPwd>hc3232327</SQLPwd>
+    <SQLDatabase>TRQC</SQLDatabase>
+    <ReportSQL>"select top 51 [存货编码] ,[存货名称],cast(cast([数量] as int) as varchar(50)) as 数量,[计量单位] as 单位 from [InvQC]"</ReportSQL>
+  </Report>
+  
+</Reports>
+
