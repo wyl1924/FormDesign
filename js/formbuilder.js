@@ -1120,7 +1120,7 @@ function propertyInit() {
             $('#lightBox').css('margin-top', $(document).scrollTop() - 210)
         }
         $.lightBox({
-            url: '/Content/CustomFrom/FormDesign/html/predefinechoices.html',
+            url: '/html/predefinechoices.html',
             size: 's',
             confirm: function () {
                 A('radio');
@@ -1148,7 +1148,7 @@ function propertyInit() {
             $('#lightBox').css('margin-top', $(document).scrollTop() - 210)
         }
         $.lightBox({
-            url: '/Content/CustomFrom/FormDesign/html/itembatchedit.html',
+            url: '/html/itembatchedit.html',
             size: 's',
             confirm: function () {
                 A(F[IDX].TYP);
@@ -1195,7 +1195,7 @@ function propertyInit() {
             $('#lightBox').css('margin-top', $(document).scrollTop() - 210)
         }
         $.lightBox({
-            url: '/Content/CustomFrom/FormDesign/html/predefinelikert.html',
+            url: '/html/predefinelikert.html',
             size: 's',
             confirm: function () {
                 e($('#likertCols'), 'likertCol');
