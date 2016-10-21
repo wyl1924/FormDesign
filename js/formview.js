@@ -49,8 +49,8 @@ DEFFLD = {
     time: {
         html: '<label class="desc"><span class="req hide"> *</span></label><div class="content oneline reduction"><span>\t<select class="hh input" ></select></span><span class="split"> : </span><span>\t<select class="mm input" ></select></span></div>'
     },
-    file: {
-        html: '<label class="desc"><span class="req hide"> *</span></label><div class="content"><input type="text"  class="m input" />&nbsp;<input type="button" class="btn file-input"  value="浏览..." /></div>'
+     file: {
+        html: '<label class="desc"><span class="req hide"> *</span></label><div class="content"><form method="post" target="hidden_frame" enctype="multipart/form-data" action="/CustomFrom/FormDesign/FileUpload"><input type="file"  class="m input" />&nbsp;<input type="submit" class="btn file-input"  value="提交..." /><iframe name="hidden_frame" id="hidden_frame" style="display: none"></iframe></form></div>'
     },
     phone: {
         html: '<label class="desc"><span class="req hide"> *</span></label><div class="content oneline reduction"><input type="text"  maxlength="32" class="s input fld" /> <button type="button" class="btn sendcode hide">发送验证码</button></div>'
